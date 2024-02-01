@@ -1,0 +1,53 @@
+1. Difference between Functions and Methods
+Methods declared inside a class and is not an object 
+
+2. What is array in JavaScript?
+    2.1 In JavaScript, arrays have a unfixed length, unlike, for example, Java arrays
+    2.2 JavaScript types of loops: 
+        for
+        while
+        do-while
+        for-in {
+            Statement loops through the properties of an Object:
+            
+            for(key in object) {
+                //code
+            }
+
+            //example
+            const person = {fname:"John", lname:"Doe", age:25};
+            let text = "";
+            for (let x in person) {
+                text += person[x];
+            } 
+        }
+        for-of {
+            It lets you loop over iterable data structures such as Arrays, Strings, Maps, NodeLists, and more:
+            
+            const cars = ["BMW", "Volvo", "Mini"];
+            let text = "";
+            for (let x of cars) {
+                text += x;
+            }
+        }
+
+    3. Arrays methods:
+        push() -- add element to end of array and return its length
+        splice() 
+
+3. How to run JavaScript code? 
+    Run from the command line: 
+        node file-name.js
+
+    Run from the browser: 
+        Create js file
+        Create html file and write code in here: 
+            <html>
+                <head>
+                    <script defer src='./file-name.js'></script>
+                </head>
+            </html>
+
+4. JavaScript pass by reference or value?  
+    Primitive values are passed by value.
+    Objects (including functions) are passed by reference.
