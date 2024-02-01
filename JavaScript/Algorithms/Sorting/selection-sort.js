@@ -1,38 +1,26 @@
-const unsortedNumbers = [2, 5, 7, 4, 1, 0, -99, -3, 3];
+const numbers = [2, 5, 7, 4, 1, 0, -99, -3, 3];
 
 function sort(array) {
-    let sortedArray = [];
-    let unsortedArray = copy(array);
 
-    for(let i = 0; i < unsortedArray.length; i++) {
+    for (let i = 0; i < array.length; i++) {
 
-        let current = unsortedArray[i];
-        
-        for(let j = i; j < unsortedArray.length; j++) {
-            if (current > unsortedArray[j]) {
-                let reverse = current;
-                current = unsortedArray[j];
-                unsortedArray[j] = reverse;
-            }    
+        let indexOfMinElement = i;
+
+        for (let j = i; j < array.length; j++) {
+            if (array[indexOfMinElement] > array[j]) {
+                indexOfMinElement = j;
+            }
         }
 
-        sortedArray.push(current);
+        if (indexOfMinElement != i) {
+            let swap = array[indexOfMinElement];
+            array[indexOfMinElement] = array[i];
+            array[i] = swap;
+        }
     }
 
-    return sortedArray;
+    return array;
 }
 
-function copy(array) {
-    let arrayCopy = [];
-
-    for(let i = 0; i < array.length; i++) {
-        arrayCopy[i] = array[i];
-    }
-
-    return arrayCopy;
-}
-
-const sortedNumbers = sort(unsortedNumbers);
-
-console.log("Unsorted Array: " + unsortedNumbers);
-console.log("Sorted Array: " + sortedNumbers);
+console.log("Unsorted Array: " + numbers);
+console.log("Sorted Array: " + sort(numbers));
