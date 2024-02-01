@@ -1,24 +1,12 @@
 function sort(array) {
 
     for (let i = 0; i < array.length; i++) {
-        
-        let indexOfMinElement = i;
-
-        for (let j = i + 1; j < array.length; j++) {
-            if (array[indexOfMinElement] > array[j]) {
-                indexOfMinElement = j;
+        for (let j = 0; j < array.length - 1; j++) {
+            if (array[j + 1] < array[j]) {
+                const swap = array[j];
+                array[j] = array[j + 1];
+                array[j + 1] = swap;
             }
-        }
-
-        if (indexOfMinElement != i) {
-
-            let min = array[indexOfMinElement];
-            
-            for (let j = indexOfMinElement; j > i; j--) {
-                array[j] = array[j -1];
-            }
-
-            array[i] = min;
         }
     }
 
